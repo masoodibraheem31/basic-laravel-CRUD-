@@ -7,7 +7,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Create Student</div>
                     <div class="panel-body">
-                        {!!Form::open(['route'=>'students.store'])!!}
+                        {!!Form::open(['route'=>'students.store','id'=>'student-form'])!!}
                             <div class="form-group">
                             {{Form::label('name','Name')}}
                             {{Form::text('name',null,['class'=>'form-control','placeholder'=>'Enter your name'])}}
@@ -30,4 +30,9 @@
             </div>
         </div>
     </div>
+@endsection
+@section('scripts')
+    <script type="text/javascript" src="{{asset('js/jquery.validate.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/additional-methods.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/student-validate.js')}}"></script>
 @endsection
